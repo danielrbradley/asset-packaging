@@ -1,0 +1,3 @@
+name: lambda-typescript-test
+runtime: nodejs
+description: Test package Typescript code for an AWS Lambda function

@@ -1,0 +1,16 @@
+name: lambda-typescript
+description: Package Typescript code for an AWS Lambda function
+runtime: yaml
+variables:
+  command:
+    fn::invoke:
+      function: command:local:run
+      arguments:
+        command: npx tsc
+        dir: ${dir}
+        archivePaths:
+          - "*.js"
+          - "**/*.js"
+          - node_modules/**
+outputs:
+  archive: ${command.archive}
